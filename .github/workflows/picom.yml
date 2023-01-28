@@ -1,5 +1,6 @@
 name: Build packages
-on: workflow-dispatch
+on: 
+  workflow-dispatch:
 jobs:
   mkdebs:
     runs-on: ubuntu-latest
