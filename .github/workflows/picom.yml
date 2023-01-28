@@ -12,9 +12,9 @@ jobs:
           echo 'deb [signed-by=/usr/share/keyrings/makedeb-archive-keyring.gpg arch=all] https://proget.makedeb.org/ makedeb main' | sudo tee /etc/apt/sources.list.d/makedeb.list    
           sudo apt update
           sudo apt install makedeb
-          cd ~/work/Repo/picom-jonaburg-git
+          cd $(pwd)/Repo/picom-jonaburg-git
           makedeb -sA
-          cd ~/work/Repo/una
+          cd $(pwd)/Repo/una
           makedeb -sA
-          cd ~/work/Repo/oh-my-posh
+          cd $(pwd)/Repo/oh-my-posh
           makedeb -sA
