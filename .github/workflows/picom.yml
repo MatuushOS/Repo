@@ -1,0 +1,24 @@
+name: Build packages
+on: workflow-dispatch
+jobs:
+  mkdebs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Makedeb, change directory to the repo and build Picom
+        run: |
+          # Set the makedeb release you want.
+          export MAKEDEB_RELEASE='makedeb'
+
+          # Run the install script. Note that it's `bash -c` and not `bash -ci` now.
+          bash -c "$(wget -qO - 'https://shlink.makedeb.org/install')"
+          cd ~/Repo/picom-jonaburg-git
+          makedeb -sA
+     - name: Build Una for the MPR
+       run: |
+        cd ~/Repo/una
+        makedeb -sA
+     - name: Build Oh My freaking Posh
+       run: | 
+         cd ~/Repo/oh-my-posh
+         makedeb -sA
