@@ -16,7 +16,7 @@ jobs:
           echo 'deb [signed-by=/usr/share/keyrings/makedeb-archive-keyring.gpg arch=all] https://proget.makedeb.org/ makedeb main' | sudo tee /etc/apt/sources.list.d/makedeb.list    
           sudo apt update
           sudo apt install makedeb
-          cd Repo/picom-jonaburg-git
+          cd ~/Repo/picom-jonaburg-git
           makedeb -sA
           cd ~/Repo/una
           makedeb -sA
