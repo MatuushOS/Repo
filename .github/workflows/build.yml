@@ -9,7 +9,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install git
-          git clone https://github.com/MatuushOS/Repo
+          git clone https://github.com/MatuushOS/Repo ~/Repo
       - name: Setup Makedeb, change directory to the repo and build Picom, Una and OMP
         run: |
           wget -qO - 'https://proget.makedeb.org/debian-feeds/makedeb.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/makedeb-archive-keyring.gpg 1> /dev/null
